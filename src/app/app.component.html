@@ -1,0 +1,25 @@
+<div class="fiestas">
+  <span class="fiesta-item" *ngFor="let fiesta of fiestas" [ngStyle]="{'color': fiesta.color}">{{fiesta.name}}</span>
+</div>
+
+<div class="calendar" *ngFor="let month of months">
+  <div class="month">
+    <ul>
+      <li>{{month.name}}</li>
+    </ul>
+  </div>
+  
+  <ul class="weekdays">
+    <li>Mo</li>
+    <li>Tu</li>
+    <li>We</li>
+    <li>Th</li>
+    <li>Fr</li>
+    <li>Sa</li>
+    <li>Su</li>
+  </ul>
+  
+  <ul class="days">
+    <li *ngFor="let day of month.days" [ngClass]="obtenerColor(day)">{{day.id}}</li>
+  </ul>  
+</div>
